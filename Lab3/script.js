@@ -1,4 +1,4 @@
-// ====== 1) Генератор випадкових чисел ======
+// 1) Генератор випадкових чисел
 
 function* randomGenerator(min, max) {
   while (true) {
@@ -20,8 +20,7 @@ btnNext.addEventListener("click", () => {
 });
 
 
-// ====== 2) Генератор паролів ======
-
+// 2) Генератор паролів 
 function* passwordGenerator() {
   let password = "";
   while (true) {
@@ -47,7 +46,7 @@ while (true) {
 }
 
 
-// ====== 3) Генератор діалогу (чат-бот) ======
+//3) Генератор діалогу
 function* chatBot() {
   const name = yield "Hi! What is your name?";
   yield "Nice to meet you, " + name + "! How are you?";
@@ -64,7 +63,7 @@ while (true) {
 }
 
 
-// ====== 4) Втрата контексту методом ======
+//4) Втрата контексту методом
 const userName = prompt("Введіть своє ім'я:");
 
 const person = {
@@ -75,4 +74,5 @@ const person = {
 };
 
 const helloBtn = document.getElementById("hello");
-helloBtn.onclick = person.say.bind(person);
+helloBtn.onclick = () => person.say();
+
