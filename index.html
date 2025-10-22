@@ -11,14 +11,7 @@
             color: #333;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background: #1976d2;
-            color: white;
-            text-align: center;
-            padding: 30px 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            height: 100vh;
         }
 
         h1 {
@@ -52,6 +45,7 @@
 
         li {
             margin: 10px 0;
+            position: relative;
         }
 
         a {
@@ -70,11 +64,22 @@
             color: white;
             transform: translateY(-2px);
         }
+        .dropdown {
+            display: none;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #555;
+        .dropdown a {
+            display: block;
+            margin: 6px 0;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .dropdown a:hover {
+            background: #2e7d32;
+            color: white;
         }
     </style>
 </head>
@@ -86,7 +91,13 @@
                 <li><a href="Lab1/index.html">Лабораторна робота №1</a></li>
                 <li><a href="Lab2/index.html">Лабораторна робота №2</a></li>
                 <li><a href="Lab3/index.html">Лабораторна робота №3</a></li>
-                <li><a href="Lab4/index.html">Лабораторна робота №4</a></li>
+                <li>
+                    <a href="#" onclick="toggleDropdown(event)">Лабораторна робота №4 ▼</a>
+                    <div class="dropdown">
+                        <a href="Lab4/index.html">Завдання №1-2</a>
+                        <a href="Lab4/index1.html">Завдання №3</a>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -97,5 +108,12 @@
             </ul>
         </section>
     </main>
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const dropdown = event.target.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
