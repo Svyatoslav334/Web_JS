@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="tabs">
+    <div class="tab whiteborder">Border Radius</div>
+    <div class="tab">Z-index</div>
+    <div class="tab">Flex</div>
+
+    <!-- 3 вкладки з контентом -->
+    <div class="tabContent show">
+
+        <h3>Border-radius Generator</h3>
+
+        <div>
+            TL: <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
+            <input type="text" id="ttl" value="0">
+        </div>
+
+        <div>
+            TR: <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
+            <input type="text" id="ttr" value="0">
+        </div>
+
+        <div>
+            BR: <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
+            <input type="text" id="tbr" value="0">
+        </div>
+
+        <div>
+            BL: <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
+            <input type="text" id="tbl" value="0">
+        </div>
+
+        <div id="block"></div>
+
+        <textarea id="css_output"></textarea>
+    </div>
+
+    <div class="tabContent hide">
+
+        <h3>Z-index Generator</h3>
+
+        <div>
+            z-index:
+            <input type="range" id="z" min="-5" max="5" value="0" oninput="generateZ()">
+            <input type="text" id="z_val" value="0">
+        </div>
+
+        <div class="z-wrapper">
+            <div id="z_back"></div>
+            <div id="z_front"></div>
+        </div>
+
+        <textarea id="css_output_z"></textarea>
+    </div>
+
+    <div class="tabContent hide">
+
+        <h3>Flex Generator</h3>
+
+        <div>
+            flex-grow:
+            <input type="range" id="fg" min="0" max="10" value="0" oninput="generateF()">
+            <input type="text" id="fg_val" value="0">
+        </div>
+
+        <div>
+            flex-shrink:
+            <input type="range" id="fs" min="0" max="10" value="1" oninput="generateF()">
+            <input type="text" id="fs_val" value="1">
+        </div>
+
+        <div>
+            flex-basis (px):
+            <input type="range" id="fb" min="0" max="300" value="50" oninput="generateF()">
+            <input type="text" id="fb_val" value="50">
+        </div>
+
+        <div class="flex_parent">
+            <div class="flex_item" id="flex_item">Item</div>
+            <div class="flex_item">2</div>
+            <div class="flex_item">3</div>
+        </div>
+
+        <textarea id="css_output_f"></textarea>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
