@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr6</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="cart-toggle" onclick="clickCart()">
+        КОРЗИНА: <span id="count-el">0</span>
+    </div>
+
+    <h1>Обов'язково додайте своє замовлення</h1>
+
+    <div id="catalog-view">
+        <div class="catalog">
+            <div class="item">
+                <div class="badge-new">Новинка</div>
+                <div class="category">Котушки</div>
+                <div class="divider"></div>
+                <img src="img/katushka.webp" alt="">
+                <div class="title">Карпова котушка</div>
+                <div class="price"><br></div>
+                <a class="soon">Незабаром у продажі</a>
+            </div>
+
+            <div class="item">
+                <div class="category">Човни</div>
+                <div class="divider"></div>
+                <img src="img/boat.png" alt="">
+                <div class="title">Kolibri</div>
+                <div class="price"><del>8 791 грн</del> <strong>8 372 грн</strong></div>
+                <a href="#" class="btn" onclick="openQty('Kolibri', 8372)">У корзину</a>
+            </div>
+
+            <div class="item">
+                <div class="badge-hit"><span>Хіт</span><span>продажів</span></div>
+                <div class="category">Ножі</div>
+                <div class="divider"></div>
+                <img src="img/knife.webp" alt="">
+                <div class="title">Титановий чорний</div>
+                <div class="price"><strong>6 680 грн</strong></div>
+                <a href="#" class="btn" onclick="openQty('Титановий чорний', 6680)">У корзину</a>
+            </div>
+
+            <div class="item">
+                <div class="badge-hit"><span>Хіт</span><span>продажів</span></div>
+                <div class="category">Приманки</div>
+                <div class="divider"></div>
+                <img src="img/vobler.webp" alt="">
+                <div class="title">Воблер</div>
+                <div class="price"><strong>420 грн</strong></div>
+                <a href="#" class="btn" onclick="openQty('Воблер', 420)">У корзину</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-view">
+        <h2>Ваша корзина</h2>
+
+        <table border="1" width="100%" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Назва товару</th>
+                    <th>Ціна за од.</th>
+                    <th>К-сть</th>
+                    <th>Сума</th>
+                    <th>Дія</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right"><b>Разом:</b></td>
+                    <td id="total-sum">0 грн</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="cart-actions">
+            <button class="btn secondary" onclick="goBack()">Повернутись</button>
+            <button class="btn" onclick="alert('Оплата...')">Оплатити</button>
+        </div>
+    </div>
+
+    <!-- Модальні вікна -->
+    <div id="modal-qty" class="modal">
+        <div class="modal-content">
+            <h3>Вкажіть кількість:</h3>
+            <input type="number" id="input-qty" value="1" min="1">
+            <br><br>
+            <button onclick="confirmAdd()">Додати до корзини</button>
+        </div>
+    </div>
+
+    <div id="modal-ok" class="modal">
+        <div class="modal-content">
+            <h3>Товар додано</h3>
+            <button onclick="showCart()">Перейти у корзину</button>
+            <button onclick="closeAll()">Повернутись до покупок</button>
+        </div>
+    </div>
+
+    <div id="modal-empty" class="modal">
+        <div class="modal-content">
+            <h3>Корзина пуста</h3>
+            <button onclick="closeAll()">ОК</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Pr4</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #map {
+            height: 500px;
+            width: 100%;
+            border: 2px solid #333;
+            margin-top: 15px;
+        }
+
+        .controls {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input { padding: 5px; width: 100px; }
+        button { padding: 6px 12px; cursor: pointer; background: #ddd; border: 1px solid #999; }
+        button:hover { background: #ccc; }
+    </style>
+</head>
+<body>
+
+    <h1>Індивідуальне завдання: Карта</h1>
+
+    <div class="controls">
+        <h3>Перейти до координат:</h3>
+        Широта (Lat): <input type="text" id="destLat" value="48.9226">
+        Довгота (Lng): <input type="text" id="destLng" value="24.7111">
+        <button onclick="goToDestination()">Показати на карті</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script1.js"></script>
+
+</body>
+</html>

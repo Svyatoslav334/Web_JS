@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    text-align: center;
+    color: #000;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 30px 0 10px;
+}
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 30px 0;
+}
+
+.item {
+    border: 1px solid #ddd;
+    width: 250px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item:not(:last-child) {
+    border-right: none;
+}
+
+.category {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    margin-bottom: 15px;
+}
+
+.item img {
+    height: 180px;
+    margin-bottom: 15px;
+}
+
+.title {
+    color: #009cdd;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.price {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.btn, .soon {
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background: #ffe600;
+}
+
+.soon {
+    background: #d62ba3;
+    color: #fff;
+}
+
+.badge-new,
+.badge-hit {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.badge-new {
+    background: #4d8a35;
+}
+
+.badge-hit {
+    background: #00aeef;
+}
+
+.cart-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#cart-view {
+    display: none;
+    padding: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn.secondary {
+    background: #ccc;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#input-qty {
+    width: 50px;
+    text-align: center;
+}
